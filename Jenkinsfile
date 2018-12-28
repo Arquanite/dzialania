@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''rm -rf /var/www/dzialania/*
-cp -R dist/dzialania /var/www/dzialania'''
+cp -R dist/dzialania/* /var/www/dzialania'''
       }
     }
   }
