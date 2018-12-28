@@ -1,14 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('install dependencies') {
+    stage('Install dependencies') {
       steps {
         sh 'npm install'
       }
     }
-    stage('build') {
+    stage('Build') {
       steps {
         sh 'ng build --prod'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh '''rm /var/www/dzialania/*
+cp -R dist/dzialania /var/www/dzialania'''
       }
     }
   }
