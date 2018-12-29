@@ -23,8 +23,8 @@ export class GameComponent implements OnInit {
     this.a = this.getRandomInt(1, 10);
     this.b = this.getRandomInt(1, 10);
     this.res = this.a * this.b;
-    this.sign = Math.random() > 0.5 ? '*' : '/';
-    if (this.sign === '/') {
+    this.sign = Math.random() > 0.5 ? '·' : ':';
+    if (this.sign === ':') {
       const x = this.res;
       this.res = this.a;
       this.a = x;
